@@ -30,9 +30,10 @@ $theme = 'carapace';
 $config['domain'] 		= 'turtlesense.org/ts/parser';
 $config['base_url']		= 'http://'.$config['domain'].'/';
 
-$config['logs_parser_dir'] = realpath(BASEPATH . '../logs/parser');
-$config['reports_dir']      = realpath(BASEPATH . '../../../reports_ts');
-
+// Special Folders. See index.php for definitions
+$config['logs_parser_dir']        = PARSERLOGFOLDERPATH;
+$config['reports_dir']            = DEVICEREPORTSFOLDER;
+$config['date_tracking_filename'] = ".lastparse_filemtime";
 
 /*
 |--------------------------------------------------------------------------

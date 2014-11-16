@@ -34,13 +34,23 @@ class Log extends CI_Model {
   
 	function read_lastparse_filemtime() 
 	{
-		$filepath = $this->config->item('logs_parser_dir').'/.lastparse_filemtime';
+		$default_time = "1388736000"; // a date in the distant past;
+		$filepath = $this->config->item('logs_parser_dir').'/'.$this->config->item('date_tracking_filename');
+		if(!is_file($filepath)){
+  		$newfile = $this->config->item('logs_parser_dir').'/'.$this->config->item('date_tracking_filename');	
+  		file_put_contents($newfile, $default_time, LOCK_EX);
+		}
     return file_get_contents($filepath);
 	}
 					
 	function write_lastparse_filemtime($time='0000-00-00 00:00:00') 
 	{
-		$filepath = $this->config->item('logs_parser_dir').'/.lastparse_filemtime';
+		$default_time = "1388736000"; // a date in the distant past;
+		$filepath = $this->config->item('logs_parser_dir').'/'.$this->config->item('date_tracking_filename');
+		if(!is_file($filepath)){
+  		$newfile = $this->config->item('logs_parser_dir').'/'.$this->config->item('date_tracking_filename');  		
+  		file_put_contents($newfile, $default_time, LOCK_EX);
+		}
     file_put_contents($filepath, $time, LOCK_EX);
     return TRUE;
 	}

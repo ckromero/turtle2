@@ -1,5 +1,24 @@
 <?php
 
+/* 
+ ******************************
+ * WHEN UPGRADING CODEIGNITER
+ ******************************
+
+  Be sure to integrate the following settings
+  into the new index.php
+  
+  - Application Environment
+  - Error Reporting
+  - Special Folder Names
+  
+  Also look for comments prefixed by "TurtleSense: "
+  
+*/ 
+
+
+
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -77,6 +96,19 @@ if (defined('ENVIRONMENT'))
  *
  */
 	$application_folder = 'application';
+
+/*
+ *---------------------------------------------------------------
+ * SPECIAL FOLDER NAMES
+ *---------------------------------------------------------------
+ *
+ * These folders are used by the TurtleSense parser script.
+ * 
+ */
+	$log_folder = 'logs';
+	$parser_log_folder = 'logs/parser';
+	$device_reports_folder = '../../../reports_ts';
+	
 
 /*
  * --------------------------------------------------------------------
@@ -179,7 +211,6 @@ if (defined('ENVIRONMENT'))
 	// Name of the "system folder"
 	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 
-
 	// The path to the "application" folder
 	if (is_dir($application_folder))
 	{
@@ -194,6 +225,52 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
+
+	// TurtleSense: The path to the "log" folder
+	if (is_dir($log_folder))
+	{
+		define('LOGFOLDERPATH', $log_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$log_folder.'/'))
+		{
+			exit("You need to create the logs/ folder and be sure to define it in index.php.");
+		}
+
+		define('LOGFOLDERPATH', BASEPATH.$log_folder.'/');
+	}
+
+	// TurtleSense: The path to the parser log folder
+	if (is_dir($parser_log_folder))
+	{
+		define('PARSERLOGFOLDERPATH', $parser_log_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$parser_log_folder.'/'))
+		{
+			exit("You need to create the logs/parser/ folder and be sure to define it in index.php.");
+		}
+
+		define('PARSERLOGFOLDERPATH', BASEPATH.$parser_log_folder.'/');
+	}
+
+	// TurtleSense: The path to the device reports folder
+	if (is_dir($device_reports_folder))
+	{
+		define('DEVICEREPORTSFOLDER', $device_reports_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$device_reports_folder.'/'))
+		{
+			exit("The folder to contain the reports, sent from the devices, is not set properly. It should be linked to the FTP directory and be defined in index.php.");
+		}
+
+		define('DEVICEREPORTSFOLDER', BASEPATH.$device_reports_folder.'/');
+	}
+
 
 /*
  * --------------------------------------------------------------------

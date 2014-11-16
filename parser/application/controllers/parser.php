@@ -9,8 +9,8 @@
     
   STEP 2
   - If the file is error free, the database is checked to see if that file's event_date and sensor_id already exist in NESTS.
-    If it already exists, the data is updated to NESTS, SENSORS, and COMMUNICATORS after an insert to EVENTS. 
-    If it does not exist, the file data is inserted (same set of tables) and the file is moved to its "processed" directory.
+    If it already exists, the data is updated in NESTS, SENSORS, and COMMUNICATORS after an insert to EVENTS. 
+    If it does not exist, the file data is inserted (same set of tables).
   - If the file is flagged as bad, all database actions are skipped and the file is moved to malformed_reports.
   - In all cases a log will record the outcome.
   
@@ -171,15 +171,14 @@ class Parser extends CI_Controller {
         }//foreach entry
  
         // Save to a file, the newest modification date from this batch of parsed files
-        //$this->logmodel->write_lastparse_filemtime($newest_filemtime);
-        $this->logmodel->write_lastparse_filemtime('1388736000');
+        $this->logmodel->write_lastparse_filemtime($newest_filemtime);
 
       }//foreach file
     } 
     else {      
       echo "No new files to read.<br>";
     }
-    echo "<br>THE END";
+    echo "<br>PARSER FINISHED!";
 	}
 		  
   function _processNestRegistration($data_fields)
