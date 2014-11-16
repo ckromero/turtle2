@@ -37,6 +37,10 @@
   Create parser/env.txt with only the name of the configuration 
   files' directory name. ie., staging
   
+  Go to the parser's home page at ts, and click "Parse Now".
+  This will run the parser for the first time and let you know
+  if you have any configuration problems.
+  
   
   Licensing
   ---------
