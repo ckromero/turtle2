@@ -27,7 +27,7 @@ $theme = 'carapace';
 | path to your installation.
 |
 */
-$config['domain'] 		= 'turtlesense.org/ts/parser';
+$config['domain'] 		= '74.208.105.177';
 $config['base_url']		= 'http://'.$config['domain'].'/';
 
 // Special Folders. See index.php for definitions
