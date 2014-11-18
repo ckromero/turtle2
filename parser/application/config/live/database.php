@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = '74.208.105.177';
 $db['default']['username'] = 'remoteuser';
-$db['default']['password'] = 'sensibleturtle';
-$db['default']['database'] = 'thoughtfulturtle';
+$db['default']['password'] = 'thoughtfulturtle';
+$db['default']['database'] = 'live';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
