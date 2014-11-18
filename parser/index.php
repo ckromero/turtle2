@@ -1,20 +1,20 @@
 <?php
 
 /* 
- ******************************
- * WHEN UPGRADING CODEIGNITER
- ******************************
+ *********************************
+ * IMPORTANT UPGRADE INSTRUCTIONS
+ *********************************
 
   Be sure to integrate the following settings
-  into the new index.php
+  into the new index.php when upgrading Codeigniter:
   
   - Application Environment
   - Error Reporting
   - Special Folder Names
   
-  Also look for comments prefixed by "TurtleSense: "
-  
-*/ 
+  Also look for comments prefixed by "TurtleSense: " */ 
+
+
 
 
 
@@ -56,7 +56,7 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'local':
-		case 'staging':
+		case 'stage':
 			error_reporting(E_ALL);
 		break;
 	
@@ -240,6 +240,7 @@ if (defined('ENVIRONMENT'))
 
 		define('LOGFOLDERPATH', BASEPATH.$log_folder.'/');
 	}
+  // end - TurtleSense:
 
 	// TurtleSense: The path to the parser log folder
 	if (is_dir($parser_log_folder))
@@ -255,6 +256,7 @@ if (defined('ENVIRONMENT'))
 
 		define('PARSERLOGFOLDERPATH', BASEPATH.$parser_log_folder.'/');
 	}
+  // end - TurtleSense:
 
 	// TurtleSense: The path to the device reports folder
 	if (is_dir($device_reports_folder))
@@ -270,7 +272,7 @@ if (defined('ENVIRONMENT'))
 
 		define('DEVICEREPORTSFOLDER', BASEPATH.$device_reports_folder.'/');
 	}
-
+  // end - TurtleSense:
 
 /*
  * --------------------------------------------------------------------

@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = '74.208.105.177';
-$db['default']['username'] = 'root';
+$db['default']['username'] = 'remoteuser';
 $db['default']['password'] = 'sensibleturtle';
-$db['default']['database'] = 'turtlesense';
+$db['default']['database'] = 'thoughtfulturtle';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -9,8 +9,8 @@
     
   STEP 2
   - If the file is error free, the database is checked to see if that file's event_date and sensor_id already exist in NESTS.
-    If it already exists, the data is updated in NESTS, SENSORS, and COMMUNICATORS after an insert to EVENTS. 
-    If it does not exist, the file data is inserted (same set of tables).
+  - If it already exists, the data is updated in NESTS, SENSORS, and COMMUNICATORS after an insert to EVENTS. 
+  - If it does not exist, the file data is inserted (same set of tables).
   - If the file is flagged as bad, all database actions are skipped and the file is moved to malformed_reports.
   - In all cases a log will record the outcome.
   
@@ -21,12 +21,10 @@
   
   An event is the same as a log entry for a registration or log entry for a report (set of records from a sensor).
  
- 
  Potential Confusion:
  
-  Logs refer to two things: typical system log, and the device log that's ftp'd
-  Reports refer to two things: any device log, and the specific device log that contains records.
- 
+  The word "log" may refer to both a typical application log, as well as to the device report that's ftp'd to the server.
+  The word "report" may refer to both the device log, as well as to a specific device log that contains records.
  
  */
 

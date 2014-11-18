@@ -27,7 +27,7 @@ $theme = 'carapace';
 | path to your installation.
 |
 */
-$config['domain'] 		= 'localhost/ts';
+$config['domain'] 		= 'go/ts';
 $config['base_url']		= 'http://'.$config['domain'].'/';
 
 // Special Folders. See index.php for definitions
